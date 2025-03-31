@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Interview - Live</title>
+</head>
+<body>
+    <h1>Mock Interview - Real-Time</h1>
+
+    <img src="{% url 'video_feed' %}" alt="Video Stream" width="640" height="480">
+    
+    <br>
+
+    <!-- Buttons for controlling the interview -->
+    <button id="askQuestionBtn" onclick="askQuestion()">Ask Question</button>
+    <button id="nextQuestionBtn" onclick="nextQuestion()" style="display:none;">Next Question</button>
+    <button id="endInterviewBtn" onclick="endInterview()" style="display:none;">End Interview</button>
+
+    <script>
+        // Function to start the interview with the first question
+        async function askQuestion() {
+            const response = await fetch("{% url 'toggle_recording' %}", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "action=ask_question"
+            });
+
+            const result = await response.json();
+            alert(result.status);
+
+            // Switch button visibility
+            document.getElementById("askQuestionBtn").style.display = "none";
+            document.getElementById("nextQuestionBtn").style.display = "inline";
+        }
+
+        // Function to move to the next question
+        async function nextQuestion() {
+            const response = await fetch("{% url 'toggle_recording' %}", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "action=next_question"
+            });
+
+            const result = await response.json();
+            alert(result.status);
+
+            // If interview is ending, switch to End Interview button
+            if (result.status === "End Interview") {
+                document.getElementById("nextQuestionBtn").style.display = "none";
+                document.getElementById("endInterviewBtn").style.display = "inline";
+            }
+        }
+
+        // Function to end the interview
+        async function endInterview() {
+            const response = await fetch("{% url 'toggle_recording' %}", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "action=end_interview"
+            });
+
+            const result = await response.json();
+            alert(result.status);
+
+            // Disable all buttons after ending the interview
+            document.getElementById("nextQuestionBtn").style.display = "none";
+            document.getElementById("endInterviewBtn").style.display = "none";
+        }
+    </script>
+</body>
+</html>

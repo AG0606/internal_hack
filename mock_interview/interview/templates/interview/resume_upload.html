@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Upload - Mock Interview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f2f2f2;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Your Resume & Job Description</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="resume">Upload Resume (PDF or DOCX):</label>
+        <input type="file" name="resume" accept=".pdf,.docx" required>
+        
+        <label for="job_description">Enter Job Description:</label>
+        <textarea name="job_description" rows="5" placeholder="Describe the job requirements..." required></textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
