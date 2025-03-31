@@ -4,66 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mock Interview - Live</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        img {
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            background: rgba(0, 123, 255, 0.8);
+            border-radius: 12px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background: rgba(0, 86, 179, 0.9);
+            transform: translateY(-3px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 <body>
     <h1>Mock Interview - Real-Time</h1>
-
     <img src="{% url 'video_feed' %}" alt="Video Stream" width="640" height="480">
     
-    <br>
-
-    <!-- Buttons for controlling the interview -->
-    <button id="askQuestionBtn" onclick="askQuestion()">Ask Question</button>
-    <button id="nextQuestionBtn" onclick="nextQuestion()" style="display:none;">Next Question</button>
-    <button id="endInterviewBtn" onclick="endInterview()" style="display:none;">End Interview</button>
-
+    <div class="button-container">
+        <button id="askQuestionBtn" onclick="askQuestion()">Ask Question</button>
+        <button id="nextQuestionBtn" onclick="nextQuestion()" style="display:none;">Next Question</button>
+        <button id="endInterviewBtn" onclick="endInterview()" style="display:none;">End Interview</button>
+    </div>
+    
     <script>
-        // Function to start the interview with the first question
         async function askQuestion() {
             const response = await fetch("{% url 'toggle_recording' %}", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: "action=ask_question"
             });
-
             const result = await response.json();
             alert(result.status);
-
-            // Switch button visibility
             document.getElementById("askQuestionBtn").style.display = "none";
             document.getElementById("nextQuestionBtn").style.display = "inline";
         }
-
-        // Function to move to the next question
+        
         async function nextQuestion() {
             const response = await fetch("{% url 'toggle_recording' %}", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: "action=next_question"
             });
-
             const result = await response.json();
             alert(result.status);
-
-            // If interview is ending, switch to End Interview button
             if (result.status === "End Interview") {
                 document.getElementById("nextQuestionBtn").style.display = "none";
                 document.getElementById("endInterviewBtn").style.display = "inline";
             }
         }
-
-        // Function to end the interview
+        
         async function endInterview() {
             const response = await fetch("{% url 'toggle_recording' %}", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: "action=end_interview"
             });
-
             const result = await response.json();
             alert(result.status);
-
-            // Disable all buttons after ending the interview
             document.getElementById("nextQuestionBtn").style.display = "none";
             document.getElementById("endInterviewBtn").style.display = "none";
         }
