@@ -5,22 +5,41 @@
     <title>Home - Lumen</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
             padding: 50px;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
         }
         button {
-            margin: 20px;
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 15px 40px;
+            font-size: 20px;
             cursor: pointer;
             border: none;
             color: white;
-            background-color: #007BFF;
-            border-radius: 8px;
+            background: rgba(0, 123, 255, 0.8);
+            border-radius: 12px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
         button:hover {
-            background-color: #0056b3;
+            background: rgba(0, 86, 179, 0.9);
+            transform: translateY(-3px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
         }
         a {
             text-decoration: none;
@@ -29,8 +48,8 @@
 </head>
 <body>
     <h1>Welcome to Lumen</h1>
-    <div>
-        <a href="#"><button>Practice Interview</button></a> <!-- Placeholder for now -->
+    <div class="button-container">
+        <a href="#"><button>Practice Interview</button></a>
         <a href="{% url 'resume_upload' %}"><button>Mock Interview</button></a>
     </div>
 </body>
