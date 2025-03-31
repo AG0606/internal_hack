@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen - AI Interview Assistant</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">LUMEN</span>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav-menu">
+                <a href="mainpage.html" class="nav-item">
+                    <span class="icon">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">📚</span>
+                    <span>My Library</span>
+                </a>
+                <a href="chatbot.html" class="nav-item active">
+                    <span class="icon">🤖</span>
+                    <span>AI Assistant</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🔖</span>
+                    <span>Bookmarks</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🕒</span>
+                    <span>History</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">⚙️</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-titles">
+                    <h1 class="header-title">AI Interview Assistant</h1>
+                    <p class="header-subtitle">Practice & Improve</p>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-outline" type="button">
+                        <span class="icon">📝</span>
+                        New Practice Session
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                        <span class="icon">▶️</span>
+                        Start Interview
+                    </button>
+                </div>
+            </header>
+
+            <!-- Chat Interface -->
+            <div class="chat-container card">
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <h3>Interview Practice Session</h3>
+                        <span class="chat-status">AI Assistant Active</span>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="action-btn" title="Settings">⚙️</button>
+                        <button class="action-btn" title="Analytics">📊</button>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages">
+                    <!-- AI Welcome Message -->
+                    <div class="message ai-message">
+                        <div class="message-content">
+                            <p>Hello! I'm your AI interview assistant. I can help you practice for interviews by:</p>
+                            <ul>
+                                <li>Asking common interview questions</li>
+                                <li>Providing real-time feedback on your responses</li>
+                                <li>Analyzing your communication style</li>
+                                <li>Suggesting improvements</li>
+                            </ul>
+                            <p>Would you like to start with a specific type of interview or let me choose questions based on your profile?</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" type="button">Technical Interview</button>
+                        <button class="quick-action-btn" type="button">Behavioral Interview</button>
+                        <button class="quick-action-btn" type="button">System Design</button>
+                        <button class="quick-action-btn" type="button">Custom Practice</button>
+                    </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="chat-input-container">
+                    <div class="chat-input-wrapper">
+                        <textarea 
+                            class="chat-input" 
+                            placeholder="Type your response here..."
+                            aria-label="Chat input"
+                        ></textarea>
+                        <button class="send-button" type="button" title="Send message">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="input-actions">
+                        <button class="action-btn" title="Voice input">🎤</button>
+                        <button class="action-btn" title="Notes">📝</button>
+                        <button class="action-btn" title="Analytics">📊</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="search-container">
+                <span class="search-icon" aria-hidden="true">🔍</span>
+                <input 
+                    type="text" 
+                    class="search-bar" 
+                    placeholder="Search for interview questions, tips, and more!"
+                    aria-label="Search"
+                >
+            </div>
+            <div class="session-info">Practice Session 1/5</div>
+            <button class="btn btn-primary">Upgrade to Pro</button>
+            <img src="https://placehold.co/36x36" alt="User avatar" class="user-avatar">
+        </div>
+    </div>
+</body>
+</html>

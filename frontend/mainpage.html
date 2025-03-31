@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen - My Library</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="mainpage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">LUMEN</span>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav-menu">
+                <a href="mainpage.html" class="nav-item active">
+                    <span class="icon">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">📚</span>
+                    <span>My Library</span>
+                </a>
+                <a href="chatbot.html" class="nav-item">
+                    <span class="icon">🤖</span>
+                    <span>AI Assistant</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🔖</span>
+                    <span>Bookmarks</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🕒</span>
+                    <span>History</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">⚙️</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-titles">
+                    <h1 class="header-title">My Library</h1>
+                    <p class="header-subtitle">Sessions</p>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-outline">New folder</button>
+                    <button class="btn btn-primary">New session</button>
+                </div>
+            </header>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tab active">Videos</div>
+                <a href="chatbot.html" class="tab">ChatBot</a>
+                <div class="tab">Resume</div>
+                <a href="video.html" class="tab">1 video</a>
+            </div>
+
+            <!-- Video Grid -->
+            <section class="video-grid">
+                <h3 class="grid-title">Videos</h3>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-duration">4 min</div>
+                        <div class="video-actions">
+                            <button class="action-btn">⋮</button>
+                            <button class="action-btn">⚙️</button>
+                            <button class="action-btn">🔍</button>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-author">
+                            <img src="https://placehold.co/32x32" alt="Author avatar" class="author-avatar">
+                            <div class="author-details">
+                                <span class="author-name">Aryan Garg</span>
+                                <span class="author-date">・3mo</span>
+                            </div>
+                        </div>
+                        <h4 class="video-title">Lumen Session - 31 January 2025</h4>
+                        <div class="video-stats">
+                            <span class="stat">👁️ 3</span>
+                            <span class="stat">💬 0</span>
+                            <span class="stat">🔗 0</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-bar" placeholder="Search for Sessions, Resume suggestions and more!">
+            </div>
+            <div class="video-count">1/25 videos</div>
+            <a href="login.html" class="btn btn-primary">Join Lumen</a>
+            <img src="https://placehold.co/36x36" alt="User avatar" class="user-avatar">
+        </div>
+    </div>
+</body>
+</html>
