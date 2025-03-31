@@ -2,7 +2,7 @@
 
 ## Overview
 The AI-Powered Interview Coach is a comprehensive tool designed to help individuals improve their interview skills through real-time analysis. It leverages machine learning models for facial emotion recognition, speech-to-text transcription, sentiment analysis, and response evaluation to provide actionable feedback for interview preparation.
-
+[View Presentation](https://www.canva.com/design/DAGMtt-IaoA/x84ZB1JQHglTjwnV2gRWig/view)
 ## Features
 - **Live Facial Emotion Recognition**: Analyzes facial expressions in real-time to detect emotions during the interview.
 - **Speech-to-Text Conversion**: Uses advanced transcription models to convert spoken responses into text.
